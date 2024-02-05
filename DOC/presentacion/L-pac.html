@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pacientes</title>
+</head>
+<body>
+    <h1>Lista de Pacientes Registrados</h1>
+    <?php if (count($pacientes) > 0): ?>
+        <ul>
+            <?php foreach ($pacientes as $paciente): ?>
+                <li>
+                    <?php foreach ($paciente as $campo => $valor): ?>
+                        <strong><?php echo "$campo:"; ?></strong> <?php echo $valor; ?>,
+                    <?php endforeach; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+        <p>No hay pacientes registrados.</p>
+    <?php endif; ?>
+</body>
+</html>
